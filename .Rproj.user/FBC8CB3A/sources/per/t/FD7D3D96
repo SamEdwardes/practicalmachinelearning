@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1561562534427.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1764447874",
+    "id" : "FD7D3D96",
+    "lastKnownWriteTime" : 1561563006,
+    "last_content_update" : 1561563006135,
+    "path" : "~/GitHub/practicalmachinelearning/README.md",
+    "project_path" : "README.md",
+    "properties" : {
+        "cursorPosition" : "5,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}

@@ -1,0 +1,4 @@
+"0","g1 <- ggplot(data = train, aes(x = classe_description, fill = user_name)) + "
+"0","    geom_bar(alpha = 0.5)"
+"0",""
+"0","g1"
