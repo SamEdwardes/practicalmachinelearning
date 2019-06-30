@@ -1,0 +1,5 @@
+"0","# fit the model"
+"0","model_2 <- train(classe ~ .,"
+"0","                 data = training_train,"
+"0","                 method = ""rf"","
+"0","                 trControl = fitControl)"

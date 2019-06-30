@@ -1,0 +1,4 @@
+"0","# fit the model"
+"0","model_0 <- train(classe ~ .,"
+"0","                 data = training,"
+"0","                 method = ""rpart"")"

@@ -1,0 +1,5 @@
+"0","# train_url <- ""https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"""
+"0","# test_url <- ""https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"""
+"0","# "
+"0","# raw_train <- fread(train_url)"
+"0","# raw_test <- fread(test_url)"

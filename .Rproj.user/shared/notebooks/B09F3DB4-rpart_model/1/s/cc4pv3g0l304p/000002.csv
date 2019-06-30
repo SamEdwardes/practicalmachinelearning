@@ -1,0 +1,8 @@
+"0","# fitControl perameters"
+"0","fitControl <- trainControl(method = ""cv"", # use cross validation"
+"0","                           number = 10)"
+"0","# fit the model"
+"0","model_1 <- rpart::rpart(classe ~ .,"
+"0","                 data = training_train,"
+"0","                 method = ""class"")"
+"0","                 #trControl = fitControl)"

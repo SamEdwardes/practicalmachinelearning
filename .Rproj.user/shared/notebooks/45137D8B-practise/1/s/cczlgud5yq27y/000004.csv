@@ -1,0 +1,8 @@
+"0","# fit the model"
+"0","model_1 <- train(classe ~ .,"
+"0","                 data = train,"
+"0","                 method = ""rf"","
+"0","                 prox = TRUE)"
+"2","Error in na.fail.default(list(classe = c(""A"", ""A"", ""A"", ""A"", ""A"", ""A"",  : 
+  missing values in object
+"

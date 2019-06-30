@@ -1,0 +1,5 @@
+"0","greater_than_95 <- sapply(train, function(x) sum(is.na(x))/nrow(train)<0.05)"
+"0","training <- training[, greater_than_95]"
+"2","Error in `[.data.frame`(training, , greater_than_95) : 
+  undefined columns selected
+"
