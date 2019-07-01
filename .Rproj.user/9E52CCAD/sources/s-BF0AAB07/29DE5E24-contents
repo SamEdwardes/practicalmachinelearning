@@ -1,6 +1,8 @@
 ---
 title: "Practical Machine Learning - Predicting Exercise Form"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 # Background
 
@@ -24,7 +26,7 @@ You will also use your prediction model to predict 20 different test cases.
 
 # Libraries and environment
 The required libraries are listed and loaded into the environment below. For reproduce-ability, we have also set a seed.
-```{r include=FALSE}
+```{r results=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
 library(data.table)
 library(caret)
@@ -37,7 +39,7 @@ set.seed(19930212)
 # Load data
 
 Load data into R.
-```{r}
+```{r results=FALSE, warning=FALSE, message=FALSE}
 train_url <- "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"
 test_url <- "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"
 
@@ -47,7 +49,7 @@ raw_test <- fread(test_url)
 
 # Feature selection
 
-Some initial exploratory analysis was performed on the data. This can be found in **notebooks** repository in several different notebooks. The original data has dimensions of `r dim(raw_train)`. This many features are likely not required and could result in over-fitting. The next section of this document will outline how the final features were selected for use in the model.
+Some initial exploratory analysis was performed on the data. This can be found in [notebooks](notebooks) repository in several different notebooks. The original data has dimensions of `r dim(raw_train)`. This many features are likely not required and could result in over-fitting. The next section of this document will outline how the final features were selected for use in the model.
 
 ## Cleaning the data
 
@@ -147,7 +149,7 @@ training_test <- training[-inTrain,]
 
 # Model: Random Forests
 
-Random forests was selected as the model of choice due to the high accuracy of the predictions. Originally, a [classification tree model](notebooks/rpart_model - v2.Rmd) was built using "rpart". While this model was highly interpret-able, the accuracy was not very good. Using rpart I was not able to achieve the 80% accuracy required to pass the week 4 quiz. This lead to the random forest model described below as the final model.
+Random forests was selected as the model of choice due to the high accuracy of the predictions. Originally, a [classification tree model](notebooks/rpart_model.Rmd) was built using "rpart". While this model was highly interpret-able, the accuracy was not very good. Using rpart I was not able to achieve the 80% accuracy required to pass the week 4 quiz. This lead to the random forest model described below as the final model.
 
 ## Setting up parallel implementation
 

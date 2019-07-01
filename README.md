@@ -2,7 +2,7 @@
 
 Repository for JHU Coursera Practical Machine Learning course week 4 project.
 
-- See the [index page](index) for an overview of the selected model
+- See the [index page](index.html) for an overview of the selected model
 - See the [notebooks repo](notebooks) for data exploration and other models
 
 The final model used random forests to obtain an estimated out of sample error rate of 99%. When submitting to the week 4 Coursera project quiz the predections were correct with 100% accuracy.
@@ -20,11 +20,11 @@ Using devices such as Jawbone Up, Nike FuelBand, and Fitbit it is now possible t
 
 ### The training data for this project are available here:
 
-https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv
+[https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv](https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv)
 
 ### The test data are available here:
 
-https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv
+[https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv](https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv)
 
 The data for this project come from this source: http://groupware.les.inf.puc-rio.br/har. If you use the document you create for this class for any purpose please cite them as they have been very generous in allowing their data to be used for this kind of assignment.
 
