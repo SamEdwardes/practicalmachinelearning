@@ -1,6 +1,7 @@
 # History files
 .Rhistory
 .Rapp.history
+.Rproj.user/
 
 # Session Data files
 .RData
@@ -15,7 +16,7 @@
 /*.Rcheck/
 
 # RStudio files
-.Rproj.user/
+.Rproj.user/*
 
 # produced vignettes
 vignettes/*.html
@@ -34,3 +35,5 @@ vignettes/*.pdf
 
 # Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
 rsconnect/
+.Rhistory
+.Rproj.user/9E52CCAD/rmd-outputs
