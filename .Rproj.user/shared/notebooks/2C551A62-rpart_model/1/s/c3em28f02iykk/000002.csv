@@ -1,0 +1,5 @@
+"0","```r
+# check for near zero variance
+nsv <- nearZeroVar(training, saveMetrics = TRUE)
+nsv[nsv$nzv == TRUE,]
+```"

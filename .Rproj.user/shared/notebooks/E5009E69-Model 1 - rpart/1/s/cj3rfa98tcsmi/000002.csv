@@ -1,0 +1,14 @@
+"0","```r
+# total missing values
+sum(is.na(training))
+
+# missing values by column
+sapply(training, function(x) sum(is.na(x))/nrow(training))
+
+# Remove columns that do not have enough data. We will remove any column that does not have data for at least 95% of observations.
+greater_than_95 <- sapply(training, function(x) sum(is.na(x))/nrow(training)<0.05)
+training <- training[, greater_than_95]
+
+# how many features are there?
+dim(training)
+```"

@@ -1,0 +1,36 @@
+"0","```r
+confusionMatrix(predict1, training_test$classe)
+```"
+"1","Confusion Matrix and Statistics
+
+          Reference
+Prediction    A    B    C    D    E
+         A 1300  209   14   68   30
+         B   40  568  137   59  113
+         C   30  107  607   65   59
+         D   22   39   64  562  100
+         E    3   26   33   50  599
+
+Overall Statistics
+                                          
+               Accuracy : 0.7414          
+                 95% CI : (0.7289, 0.7536)
+    No Information Rate : 0.2845          
+    P-Value [Acc > NIR] : < 2.2e-16       
+                                          
+                  Kappa : 0.671           
+                                          
+ Mcnemar's Test P-Value : < 2.2e-16       
+
+Statistics by Class:
+
+                     Class: A Class: B Class: C Class: D Class: E
+Sensitivity            0.9319   0.5985   0.7099   0.6990   0.6648
+Specificity            0.9085   0.9118   0.9355   0.9451   0.9720
+Pos Pred Value         0.8020   0.6194   0.6993   0.7141   0.8425
+Neg Pred Value         0.9711   0.9044   0.9386   0.9412   0.9280
+Prevalence             0.2845   0.1935   0.1743   0.1639   0.1837
+Detection Rate         0.2651   0.1158   0.1238   0.1146   0.1221
+Detection Prevalence   0.3305   0.1870   0.1770   0.1605   0.1450
+Balanced Accuracy      0.9202   0.7551   0.8227   0.8221   0.8184
+"

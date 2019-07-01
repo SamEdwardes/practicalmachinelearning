@@ -1,0 +1,20 @@
+"0","```r
+# Create a new dataframe for training
+training <- as.data.frame(raw_train)
+
+# clean the data
+
+# turn the classe column into a factor
+training$classe <- factor(training$classe)
+
+# turn all integers into numeric
+for (i in colnames(training)){
+  class_i <- class(training[[i]])
+  if(class_i == \"integer\"){training[[i]] <- as.numeric(training[[i]])}
+}
+
+# how many features are there?
+dim(training)
+```"
+"1","[1] 19622   160
+"

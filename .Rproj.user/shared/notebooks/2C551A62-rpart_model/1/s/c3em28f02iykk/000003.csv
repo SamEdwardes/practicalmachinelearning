@@ -1,0 +1,11 @@
+"0","```r
+
+# remove the columns with near zero variances
+drop_cols <- rownames(nsv[nsv$nzv == TRUE,])
+training <- training %>% select(-drop_cols)
+
+# how many features are there?
+dim(training)
+```"
+"1","[1] 19622   124
+"

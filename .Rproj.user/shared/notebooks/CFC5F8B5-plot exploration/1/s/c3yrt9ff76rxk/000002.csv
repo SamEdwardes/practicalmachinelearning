@@ -1,0 +1,4 @@
+"0","g1 <- ggplot(data = raw_train, aes(x = classe, y = pitch_forearm, colour = classe, alpha = 0.2)) + "
+"0","  geom_jitter()"
+"0",""
+"0","g1"

@@ -1,0 +1,8 @@
+"0","```r
+predict1 <- predict(model_1, newdata = training_test, type = \"class\")
+table(predict1)
+```"
+"1","predict1
+   A    B    C    D    E 
+1621  917  868  787  711 
+"

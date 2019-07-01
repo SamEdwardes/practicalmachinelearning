@@ -1,0 +1,7 @@
+"0","```r
+# fit the model
+model_2 <- train(classe ~ .,
+                 data = training_train,
+                 method = \"rf\",
+                 trControl = fitControl)
+```"

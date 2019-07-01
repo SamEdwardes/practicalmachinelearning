@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1562009094077.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2844119074",
+    "id" : "2839D996",
+    "lastKnownWriteTime" : 1562014175,
+    "last_content_update" : 1562014175243,
+    "path" : "~/Documents/GitHub/practicalmachinelearning/README.md",
+    "project_path" : "README.md",
+    "properties" : {
+        "cursorPosition" : "4,67",
+        "ignored_words" : "FuelBand,Fitbit,accelerometers,dumbell,http,les,puc,rio,br,har,Dataset,https,qusza,orc\n",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}

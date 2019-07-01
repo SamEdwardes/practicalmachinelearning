@@ -1,0 +1,4 @@
+"0","```r
+predict_out <- predict(model_1, newdata = training_test, type = \"class\")
+table(predict_out)
+```"

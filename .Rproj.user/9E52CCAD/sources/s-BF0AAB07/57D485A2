@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1562013900830.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1222309655",
+    "id" : "57D485A2",
+    "lastKnownWriteTime" : 1562014240,
+    "last_content_update" : 1562014240124,
+    "path" : "~/Documents/GitHub/practicalmachinelearning/notebooks/data exploration v1.Rmd",
+    "project_path" : "notebooks/data exploration v1.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

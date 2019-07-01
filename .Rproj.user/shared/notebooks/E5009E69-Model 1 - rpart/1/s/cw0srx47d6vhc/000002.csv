@@ -1,0 +1,11 @@
+"0","```r
+# drop selected columns
+drop_cols <- c(\"V1\", \"user_name\", \"raw_timestamp_part_1\", \"raw_timestamp_part_2\", \"cvtd_timestamp\", \"new_window\", \"num_window\")
+training <- training %>% select(-one_of(drop_cols))
+
+# remove columns that start with \"total\"
+training <- training %>% select(-starts_with(\"total\"))
+
+# how many features are there?
+dim(training)
+```"

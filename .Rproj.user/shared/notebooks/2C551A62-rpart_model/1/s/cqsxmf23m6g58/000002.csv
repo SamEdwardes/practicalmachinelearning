@@ -1,0 +1,5 @@
+"0","```r
+inTrain <- createDataPartition(y = training$classe, p = 0.75, list = FALSE)
+training_train <- training[inTrain,]
+training_test <- training[-inTrain,]
+```"

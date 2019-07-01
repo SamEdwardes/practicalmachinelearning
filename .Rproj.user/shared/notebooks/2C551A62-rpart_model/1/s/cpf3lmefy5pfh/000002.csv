@@ -1,0 +1,7 @@
+"0","```r
+# view model
+model_2$finalModel
+
+# plot model
+fancyRpartPlot(model_2$finalModel)
+```"

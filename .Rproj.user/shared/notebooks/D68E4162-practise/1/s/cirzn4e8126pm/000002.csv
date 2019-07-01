@@ -1,0 +1,11 @@
+"0","```r
+library(caret)
+
+```"
+"1","Loading required package: lattice
+Loading required package: ggplot2
+Registered S3 method overwritten by 'dplyr':
+  method           from
+  print.rowwise_df     
+Need help getting started? Try the cookbook for R: http://www.cookbook-r.com/Graphs/
+"

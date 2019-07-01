@@ -1,0 +1,169 @@
+---
+title: "Model #1 - rpart"
+output: html_notebook
+---
+
+
+# Libraries and environment
+Load libraries ans set the seed.
+```{r}
+library(tidyverse)
+library(data.table)
+library(caret)
+library(rattle)
+set.seed(19930212)
+```
+
+# Load data
+Load data into R
+```{r}
+# train_url <- "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"
+# test_url <- "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"
+# 
+# raw_train <- fread(train_url)
+# raw_test <- fread(test_url)
+```
+
+# Feature selection
+
+## Cleaning the data
+```{r}
+# Create a new dataframe for training
+training <- as.data.frame(raw_train)
+
+# clean the data
+
+# turn the classe column into a factor
+training$classe <- factor(training$classe)
+
+# turn all integers into numeric
+for (i in colnames(training)){
+  class_i <- class(training[[i]])
+  if(class_i == "integer"){training[[i]] <- as.numeric(training[[i]])}
+}
+
+# how many features are there?
+dim(training)
+```
+
+## Removing zero covariates
+```{r}
+# check for near zero variance
+nsv <- nearZeroVar(training, saveMetrics = TRUE)
+nsv[nsv$nzv == TRUE,]
+
+# remove the columns with near zero variances
+drop_cols <- rownames(nsv[nsv$nzv == TRUE,])
+training <- training %>% select(-drop_cols)
+
+# how many features are there?
+dim(training)
+```
+
+## Remove missing values
+The data has some columns with many missing values. Generally, the columns that look to be summary level statistics are missing values in most cases (e.g. columns starting with max, min, var, etc.)
+```{r}
+# total missing values
+sum(is.na(training))
+
+# missing values by column
+sapply(training, function(x) sum(is.na(x))/nrow(training))
+
+# Remove columns that do not have enough data. We will remove any column that does not have data for at least 95% of observations.
+greater_than_95 <- sapply(training, function(x) sum(is.na(x))/nrow(training)<0.05)
+training <- training[, greater_than_95]
+
+# how many features are there?
+dim(training)
+```
+
+
+## Remove specific columns
+Remove specific features that are not relevant:
+
+- "V1" should be removed as it is an index and is random
+- "user_name" should be removed since we want to predict the outcome based on the sensor data, not the person performing the exercise
+- "raw_timestamp_part_1", "raw_timestamp_part_2", "cvtd_timestamp", "new_window", and "num_window" should all be removed because they are timestamps, and do not have any meaningful relationship to how well the movement was performed
+- any column that starts with "total" because it is summary statistic and not capturing the same level of detail as the rest of the data
+
+```{r}
+# drop selected columns
+drop_cols <- c("V1", "user_name", "raw_timestamp_part_1", "raw_timestamp_part_2", "cvtd_timestamp", "new_window", "num_window")
+training <- training %>% select(-one_of(drop_cols))
+
+# remove columns that start with "total"
+training <- training %>% select(-starts_with("total"))
+
+# how many features are there?
+dim(training)
+```
+
+## Selected features
+Our model will use the following features.
+```{r}
+str(training)
+```
+
+# Cross validation
+Partition the training data into a subset so we can better estimate the out of sample error rate
+```{r}
+inTrain <- createDataPartition(y = training$classe, p = 0.75, list = FALSE)
+training_train <- training[inTrain,]
+training_test <- training[-inTrain,]
+```
+
+
+# Model #1: Classificaiton Tree (rpart)
+## Build the model
+```{r}
+# fit the model
+model_1 <- rpart::rpart(classe ~ .,
+                 data = training_train,
+                 method = "class")
+```
+
+## View the model
+```{r}
+# view model
+model_1
+
+# plot model
+fancyRpartPlot(model_1)
+```
+
+## Assess the model results
+### In sample error
+```{r}
+predict_in <- predict(model_1, newdata = training_test, type = "class")
+table(predict_in)
+```
+
+Confusion matrix
+```{r}
+confusionMatrix(predict_in, training_test$classe)
+```
+
+### Estimated out of sample error
+Predict using the training data that was set aside
+```{r}
+predict_out <- predict(model_1, newdata = training_test, type = "class")
+table(predict_out)
+```
+
+Confusion matrix
+```{r}
+confusionMatrix(predict1, training_test$classe)
+```
+
+# Prediction on test data
+First the same transformations that were applied to the training data must be applied to the test data.
+```{r}
+
+```
+
+We can now use the predict function generate our results.
+```{r}
+predict_test
+```
+
+
